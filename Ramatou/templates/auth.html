@@ -1,0 +1,36 @@
+﻿{% extends "base.html" %}
+{% block title %}GrieeLive - Login/Register{% endblock %}
+{% block content %}
+<section class="panel auth-wrap">
+  <h1>Login / Register</h1>
+  <p class="muted">Accédez à l'accueil complet pour commander et gérer vos achats.</p>
+  {% if error %}
+  <p class="warn">{{ error }}</p>
+  {% endif %}
+
+  <div class="auth-switch">
+    <a class="{{ 'active' if tab == 'login' else '' }}" href="/auth?tab=login&next={{ next_url }}">Login</a>
+    <a class="{{ 'active' if tab == 'register' else '' }}" href="/auth?tab=register">Register</a>
+  </div>
+
+  {% if tab == 'register' %}
+  <form method="post" class="stack auth-form">
+    <input type="hidden" name="mode" value="register">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input name="name" placeholder="Nom complet" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="phone" type="tel" placeholder="Téléphone">
+    <input name="password" type="password" placeholder="Mot de passe (6+)" required>
+    <button type="submit">Créer mon compte</button>
+  </form>
+  {% else %}
+  <form method="post" class="stack auth-form">
+    <input type="hidden" name="mode" value="login">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Mot de passe" required>
+    <button type="submit">Se connecter</button>
+  </form>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+.auth-wrap {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.auth-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.2rem;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.auth-switch a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 0.38rem 0.75rem;
+}
+
+.auth-switch a.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--p-plum), var(--p-magenta));
+}
+
+.auth-form {
+  margin-top: 0.62rem;
+}

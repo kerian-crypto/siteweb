@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+{% block title %}GrieeLive Store - Vitrine{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">Vitrine Publique</p>
+    <h1>Découvrez les produits GrieeLive sans commander</h1>
+    <p class="lead">Cette page permet uniquement de visualiser les produits. Pour commander: créez un compte ou connectez-vous.</p>
+    <p><a class="cta-link" href="/auth?tab=register">Créer un compte</a> <a class="cta-link ghost" href="/auth?tab=login">Se connecter</a></p>
+  </div>
+  <aside class="hero-note">
+    <h3>Parcours client</h3>
+    <p>1. Vitrine</p>
+    <p>2. Login/Register</p>
+    <p>3. Accueil complet</p>
+    <p>4. Nutrition / Fiches / Mes achats</p>
+  </aside>
+</section>
+
+<section class="panel">
+  <h2>Catalogue Visuel</h2>
+  <p class="muted">Mode lecture seule: pas d'ajout au panier ici.</p>
+  <div id="catalog" class="catalog-grid" data-readonly="1" data-filter="all"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{{ url_for('static', filename='js/pages/public.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+﻿{% extends "base.html" %}
+{% block title %}GrieeLive - {{ page_title }}{% endblock %}
+{% block content %}
+<section class="hero compact">
+  <div>
+    <p class="eyebrow">Catalogue Spécifique</p>
+    <h1>{{ page_title }}</h1>
+    <p class="lead">{{ page_subtitle }}</p>
+  </div>
+</section>
+
+<section class="panel">
+  <p class="muted">Ajoutez vos articles au panier puis finalisez sur l'accueil complet.</p>
+  <div id="catalog" class="catalog-grid" data-readonly="0" data-filter="{{ category }}"></div>
+  <p><a class="cta-link" href="/shop">Aller au panier et paiement</a></p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{{ url_for('static', filename='js/pages/products.js') }}"></script>
+{% endblock %}

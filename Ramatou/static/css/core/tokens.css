@@ -1,0 +1,19 @@
+:root {
+  --p-lime: #7fa834;
+  --p-green: #568319;
+  --p-deep-green: #194118;
+  --p-earth: #26190f;
+  --p-plum: #8c1b6d;
+  --p-magenta: #d02893;
+
+  --bg: #f4f6f2;
+  --surface: #ffffff;
+  --surface-muted: #f0f4eb;
+  --text: #1b1f18;
+  --text-muted: #5b6556;
+  --line: #d6dece;
+  --danger: #a41b44;
+  --success: #2f6a17;
+  --shadow-soft: 0 8px 22px rgba(25, 65, 24, 0.08);
+  --shadow-strong: 0 14px 34px rgba(38, 25, 15, 0.18);
+}

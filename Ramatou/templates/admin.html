@@ -1,0 +1,83 @@
+﻿{% extends "base.html" %}
+{% block title %}GrieeLive - Dashboard Admin{% endblock %}
+{% block content %}
+<section class="hero compact">
+  <div>
+    <p class="eyebrow">Back-Office</p>
+    <h1>Dashboard Administrateur</h1>
+    <p class="lead">Catalogue, logistique, CRM, validation kiosque et KPIs.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <p id="admin-session-state" class="muted">Session admin active.</p>
+</section>
+
+<section class="panel split">
+  <div>
+    <h2>KPIs</h2>
+    <div id="kpi-cards" class="kpi-grid"></div>
+    <h3>Alertes stock</h3>
+    <div id="low-stock-list"></div>
+  </div>
+  <div>
+    <h2>Validation Coupon Kiosque</h2>
+    <form id="coupon-form" class="stack">
+      <input name="code" placeholder="Code coupon QR" required>
+      <button type="submit">Valider le retrait</button>
+    </form>
+    <div id="coupon-result" class="result"></div>
+  </div>
+</section>
+
+<section class="panel split">
+  <div>
+    <h2>Ajouter un produit</h2>
+    <form id="product-form" class="stack">
+      <input name="name" placeholder="Nom produit" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <input name="price" type="number" step="0.01" placeholder="Prix FCFA" required>
+      <input name="image_url" type="url" placeholder="URL image" required>
+      <select name="category" required>
+        <option value="physical">Physique</option>
+        <option value="digital">Numérique</option>
+      </select>
+      <label><input name="is_free" type="checkbox"> Lead magnet (gratuit)</label>
+      <input name="stock" type="number" placeholder="Stock" required>
+      <input name="min_stock" type="number" placeholder="Stock minimum" required>
+      <button type="submit">Créer</button>
+    </form>
+  </div>
+  <div>
+    <h2>CRM Clients</h2>
+    <div id="customers-table"></div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Commandes & Logistique</h2>
+  <div id="orders-list"></div>
+</section>
+
+<section class="panel split">
+  <div>
+    <h2>Discussions Utilisateurs</h2>
+    <div id="chat-threads" class="chat-threads"></div>
+  </div>
+  <div>
+    <h2>Conversation</h2>
+    <div class="chat-shell">
+      <div id="admin-chat-box" class="chat-box"></div>
+    </div>
+    <form id="admin-chat-form" class="chat-form stack">
+      <input type="text" name="message" placeholder="Répondre à l'utilisateur...">
+      <input type="file" name="attachment" accept="image/*,video/*,.pdf,.doc,.docx,.txt,.xls,.xlsx,.ppt,.pptx">
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+{% endblock %}

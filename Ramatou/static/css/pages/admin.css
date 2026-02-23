@@ -1,0 +1,38 @@
+#low-stock-list .warn {
+  margin: 0.2rem 0;
+}
+
+.chat-threads {
+  display: grid;
+  gap: 0.5rem;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.thread-item {
+  position: relative;
+  text-align: left;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.thread-item.active {
+  border-color: var(--p-plum);
+  box-shadow: 0 0 0 2px rgba(208, 40, 147, 0.16);
+}
+
+.thread-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--p-magenta);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+}

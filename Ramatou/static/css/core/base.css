@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 16%, rgba(127, 168, 52, 0.18), transparent 34%),
+    radial-gradient(circle at 95% 2%, rgba(208, 40, 147, 0.13), transparent 28%),
+    radial-gradient(circle at 88% 88%, rgba(25, 65, 24, 0.14), transparent 28%),
+    var(--bg);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Sora", sans-serif;
+  margin: 0;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}

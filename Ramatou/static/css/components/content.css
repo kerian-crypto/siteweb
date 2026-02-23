@@ -1,0 +1,29 @@
+.kpi-grid {
+  display: grid;
+  gap: 0.62rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.kpi-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.68rem;
+  background: linear-gradient(150deg, #fff, #f2f7ea);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding: 0.45rem;
+  font-size: 0.92rem;
+}
+
+.biblio-list li {
+  margin-bottom: 0.36rem;
+}

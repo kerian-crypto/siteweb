@@ -1,0 +1,63 @@
+﻿{% extends "base.html" %}
+{% block title %}GrieeLive - Accueil Complet{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">Accueil Complet</p>
+    <h1>Bienvenue {{ current_user.name }}</h1>
+    <p class="lead">Vous pouvez commander, discuter avec le support et laisser des avis produits.</p>
+  </div>
+  <aside class="hero-note">
+    <h3>Navigation rapide</h3>
+    <p><a href="/nutrition">Produits nutritionnels</a></p>
+    <p><a href="/fiches-techniques">Fiches techniques</a></p>
+    <p><a href="/mes-achats">Mes achats</a></p>
+  </aside>
+</section>
+
+<section class="panel">
+  <h2>Catalogue Hybride</h2>
+  <div class="filters">
+    <button data-filter="all" class="active">Tout</button>
+    <button data-filter="physical">Physiques</button>
+    <button data-filter="digital">Numériques</button>
+  </div>
+  <div id="catalog" class="catalog-grid" data-readonly="0" data-filter="all"></div>
+</section>
+
+<section class="panel split">
+  <div>
+    <h2>Panier & Paiement Mobile</h2>
+    <div id="cart-list" class="cart-list"></div>
+    <p class="cart-total">Total: <strong id="cart-total">0 FCFA</strong></p>
+    <form id="checkout-form" class="stack">
+      <input type="tel" name="phone" placeholder="Téléphone" required>
+      <select name="payment_method" required>
+        <option value="Orange Money">Orange Money</option>
+        <option value="Mobile Money">Mobile Money</option>
+      </select>
+      <button type="submit">Valider la commande</button>
+    </form>
+    <div id="order-result" class="result"></div>
+  </div>
+  <div>
+    <h2>Chat Support (style WhatsApp)</h2>
+    <div class="chat-shell">
+      <div class="chat-head">
+        <strong>Support GrieeLive</strong>
+        <span class="muted">Réponse admin en temps réel</span>
+      </div>
+      <div id="chat-box" class="chat-box"></div>
+    </div>
+    <form id="chat-form" class="chat-form stack">
+      <input type="text" name="message" placeholder="Écrire un message...">
+      <input type="file" name="attachment" accept="image/*,video/*,.pdf,.doc,.docx,.txt,.xls,.xlsx,.ppt,.pptx">
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{{ url_for('static', filename='js/pages/shop.js') }}"></script>
+{% endblock %}

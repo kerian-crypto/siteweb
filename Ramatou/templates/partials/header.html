@@ -1,0 +1,28 @@
+﻿<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark">G</span>
+      <span class="brand-text">GrieeLive Nutrition</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/">Vitrine</a>
+      <a href="/bibliographie">Bibliographie</a>
+      {% if is_logged_in %}
+      <a href="/shop">Accueil</a>
+      <a href="/nutrition">Nutrition</a>
+      <a href="/fiches-techniques">Fiches Techniques</a>
+      <a href="/mes-achats">Mes achats</a>
+      <form action="/logout" method="post" class="inline-link">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="link-btn">Déconnexion</button>
+      </form>
+      {% else %}
+      <a class="nav-cta" href="/auth?tab=login">Login / Register</a>
+      {% endif %}
+      {% if current_user and current_user.is_admin %}
+      <a href="/admin">Admin</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>
