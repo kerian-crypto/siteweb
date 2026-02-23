@@ -21,7 +21,7 @@ CHAT_UPLOAD_DIR = BASE_DIR / "static" / "chat_uploads"
 
 def create_app() -> Flask:
     app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_PATH}"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://ramatou_db_user:tFt9ZomPJqjljrGz1TO9GvIGqlHguIWJ@dpg-d6e0k3tm5p6s73fhg5cg-a/ramatou_db"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["SECRET_KEY"] = "dev-secret-change-me"
     app.config["SESSION_COOKIE_HTTPONLY"] = True
